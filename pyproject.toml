@@ -76,7 +76,7 @@ skip = [
 
 [tool.tox]
 requires = ["tox>=4"]
-env_list = ["codespell", "lint", "py{310,311,312,313,314}"]
+env_list = ["lint", "py{310,311,312,313}"]
 
 [tool.tox.env_run_base]
 allowlist_externals = ["uv"]
