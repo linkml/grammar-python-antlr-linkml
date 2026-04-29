@@ -1,10 +1,9 @@
 import os
-import unittest
 
 from rdflib import Graph
 
 
-class RdflibParserTestCase(unittest.TestCase):
+class TestRdflibParser():
     def test_issue_1(self):
         """ Another test for the rdflib embedded quote problem
         See line 1578 in notation3.py:
@@ -17,8 +16,4 @@ class RdflibParserTestCase(unittest.TestCase):
                                                       'data'
                                                       ))
         g.parse(os.path.join(data_file_path, '1literalPattern_with_all_punctuation.ttl'), format="turtle")
-        self.assertTrue(True, "")
 
-
-if __name__ == '__main__':
-    unittest.main()

@@ -189,7 +189,7 @@ def enumerate_directory(dir_) -> List[TestFile]:
             yield TestFile(fpath, fname)
 
 
-class ShExCValidationTestCase(unittest.TestCase):
+class TestShExCValidation():
     """ 1) Convert the contents of the shexTest/schema's directory into ShExJSG
         2) Convert the ShExJSG into ShExC
         3) Parse the ShExC back into ShExJSG
@@ -197,8 +197,4 @@ class ShExCValidationTestCase(unittest.TestCase):
     """
 
     def test_shex_schema(self):
-        self.assertTrue(validate_shex_schemas())
-
-
-if __name__ == '__main__':
-    unittest.main()
+        validate_shex_schemas()
