@@ -1,5 +1,3 @@
-from typing import Optional, Union
-
 from ShExJSG.ShExJ import Language, NodeConstraint, Wildcard, IriStemRange, LiteralStemRange, \
     LanguageStemRange, IriStem, LiteralStem, LanguageStem, LANGTAG, IRIREF, ObjectLiteral
 
@@ -20,7 +18,7 @@ class ShexNodeExpressionParser(ShExDocVisitor):
             else 'nonliteral' if kind.KW_NONLITERAL() \
             else 'undefined'
 
-    def __init__(self, context: ParserContext, label: Optional[str]=None):
+    def __init__(self, context: ParserContext, label: str | None = None):
         ShExDocVisitor.__init__(self)
         self.context = context
         self.nodeconstraint = NodeConstraint(id=label)
