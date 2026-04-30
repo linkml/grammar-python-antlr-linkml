@@ -24,8 +24,8 @@ class ParserContext:
     """
     def __init__(self):
         self.schema = ShExJ.Schema()
-        self.ld_prefixes: Dict[PREFIXstr, IRIstr] = {}       # prefixes in the JSON-LD module
-        self.prefixes: Dict[PREFIXstr, IRIstr] = {}          # Assigned prefixes
+        self.ld_prefixes: dict[PREFIXstr, IRIstr] = {}       # prefixes in the JSON-LD module
+        self.prefixes: dict[PREFIXstr, IRIstr] = {}          # Assigned prefixes
         self.base: Optional[IRIstr] = None
 
     def _lookup_prefix(self, prefix: PREFIXstr) -> str:
@@ -173,8 +173,8 @@ class ParserContext:
                 return matchobj.group(1) + matchobj.group(2)
 
         # match rule -- zero or more pairs of backslashes w/ an odd number in front of the 'u' or 'U'
-        txt1 = re.sub(r'(\\*)(\\u[a-fA-F0-9]{4})', _subf2, txt, re.MULTILINE + re.DOTALL + re.UNICODE)
-        return re.sub(r'(\\*)(\\U[a-fA-F0-9]{8})', _subf2, txt1, re.MULTILINE + re.DOTALL + re.UNICODE)
+        txt1 = re.sub(r'(\\*)(\\u[a-fA-F0-9]{4})', _subf2, txt, flags=re.MULTILINE + re.DOTALL + re.UNICODE)
+        return re.sub(r'(\\*)(\\U[a-fA-F0-9]{8})', _subf2, txt1, flags=re.MULTILINE + re.DOTALL + re.UNICODE)
 
     def fix_text_escapes(self, txt: str, quote_char: str) -> str:
         """ Fix the various text escapes """

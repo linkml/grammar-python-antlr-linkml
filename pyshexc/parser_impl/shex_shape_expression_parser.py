@@ -1,4 +1,4 @@
-from typing import Optional, Union, List
+from typing import Optional, Union
 
 from pyshexc.parser.ShExDocParser import ShExDocParser
 from pyshexc.parser.ShExDocVisitor import ShExDocVisitor
@@ -19,7 +19,7 @@ class ShexShapeExpressionParser(ShExDocVisitor):
     # ------------------
     # shapeOr
     # ------------------
-    def _shape_or(self, ands: Union[List[ShExDocParser.ShapeAndContext], List[ShExDocParser.InlineShapeAndContext]]):
+    def _shape_or(self, ands: Union[list[ShExDocParser.ShapeAndContext], list[ShExDocParser.InlineShapeAndContext]]):
         if len(ands) > 1:
             exprs = []
             for sa in ands:
@@ -42,7 +42,7 @@ class ShexShapeExpressionParser(ShExDocVisitor):
     # shapeAnd
     # ------------------
     def _shape_and(self,
-                   nots: Union[List[ShExDocParser.ShapeNotContext], List[ShExDocParser.InlineShapeNotContext]],
+                   nots: Union[list[ShExDocParser.ShapeNotContext], list[ShExDocParser.InlineShapeNotContext]],
                    is_inline: bool):
         if len(nots) > 1:
             exprs = []
@@ -58,7 +58,7 @@ class ShexShapeExpressionParser(ShExDocVisitor):
             self.visit(nots[0])
 
     @staticmethod
-    def _collapse_ands(exprs: List, new_expr: shapeExpr) -> None:
+    def _collapse_ands(exprs: list, new_expr: shapeExpr) -> None:
         """ For various nefarious reaons, the reference parser has decided to implement
             And(And(a, b), c) --> And(a, b, c).  We've got to do the same
         """
