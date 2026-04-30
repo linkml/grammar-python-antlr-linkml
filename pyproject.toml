@@ -3,7 +3,7 @@ requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
 
 [project]
-name = "grammar-python-antlr"
+name = "grammar-python-antlr-linkml"
 description = "PyShExC - Python ShEx compiler"
 authors = [
     { name = "Eric Prudman", email = "eric@uu3.org"},
@@ -11,7 +11,7 @@ authors = [
     { name = "Wouter-Michiel Vierdag", email = "michiel.vierdag@scverse.org" }
 ]
 license = { text = "MIT License" }
-repository = "https://github.com/linkml/grammar-python-antlr"
+repository = "https://github.com/linkml/grammar-python-antlr-linkml"
 readme = "README.md"
 keywords = [
     "shex",
