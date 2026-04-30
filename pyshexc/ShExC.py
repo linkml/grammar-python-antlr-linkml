@@ -363,4 +363,4 @@ class ShExC:
             c = o.group(0)
             return chr(int('0x' + c[2:], 16))
 
-        return re.sub(r'\\x[0-9a-fA-F]+', _sub, rval, re.MULTILINE + re.DOTALL + re.UNICODE)
+        return re.sub(r'\\x[0-9a-fA-F]+', _sub, rval, flags=re.MULTILINE + re.DOTALL + re.UNICODE)

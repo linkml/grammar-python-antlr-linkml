@@ -13,6 +13,7 @@ from pyjsg.jsglib.logger import Logger
 from pyshexc.parser_impl.generate_shexj import parse
 from tests import schemas_base
 from tests.utils.build_test_harness import ValidationTestConfig
+from tests.utils.shape_decl_wrapper import rewrap_shape_decls
 
 #
 # Starting file name (full URL) (with or without ".shex" suffix)
@@ -65,6 +66,7 @@ def validate_shexc(shexc_str: str, input_fname: str) -> bool:
         return False
     shexj['@context'] = "http://www.w3.org/ns/shex.jsonld"
     shex_obj = jsg_loads(as_json(shexj), ShExJ)
+    shex_obj = rewrap_shape_decls(shex_obj)
     log = StringIO()
     rval = True
     with redirect_stdout(log):
