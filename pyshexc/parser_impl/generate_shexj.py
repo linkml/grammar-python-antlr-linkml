@@ -2,7 +2,7 @@ import codecs
 import os
 import sys
 from argparse import ArgumentParser
-from typing import Optional, Union, List
+from typing import Optional
 from urllib import request
 from urllib.parse import urlparse
 
@@ -84,7 +84,7 @@ def do_parse(infilename: str, jsonfilename: Optional[str], rdffilename: Optional
     return False
 
 
-def parse(input_: Union[str, InputStream], default_base: Optional[str]=None) -> Optional[Schema]:
+def parse(input_: str | InputStream, default_base: Optional[str]=None) -> Optional[Schema]:
     """
     Parse the text in infile and return the resulting schema
     :param input_: text or input stream to parse
@@ -145,7 +145,7 @@ def genargs() -> ArgumentParser:
     return parser
 
 
-def generate(argv: Union[str, List[str]]) -> bool:
+def generate(argv: str | list[str]) -> bool:
     """
     Transform ShExC to ShExJ
     :param argv: Command line arguments

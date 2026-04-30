@@ -1,4 +1,4 @@
-from typing import Optional, List, Union
+from typing import Optional, Union
 
 from ShExJSG.ShExJ import Language, NodeConstraint, Wildcard, IriStemRange, LiteralStemRange, \
     LanguageStemRange, IriStem, LiteralStem, LanguageStem, LANGTAG, IRIREF, ObjectLiteral
@@ -78,9 +78,9 @@ class ShexNodeExpressionParser(ShExDocVisitor):
                 vsvalue = IriStem(baseiri)      # valueSetValue = IriStem  /  IriStem: {stem:IRI}
         self._nc_values.append(vsvalue)
 
-    def _iri_exclusions(self, exclusions: List[ShExDocParser.IriExclusionContext]) \
-            -> List[Union[IriStem, IRIREF]]:
-        rval: List[Union[IriStem, IRIREF]] = []
+    def _iri_exclusions(self, exclusions: list[ShExDocParser.IriExclusionContext]) \
+            -> list[IriStem | IRIREF]:
+        rval: list[IriStem | IRIREF] = []
         for excl in exclusions:
             excl_iri = self.context.iri_to_iriref(excl.iri())
             rval.append(IriStem(excl_iri) if excl.STEM_MARK() else excl_iri)
@@ -103,20 +103,19 @@ class ShexNodeExpressionParser(ShExDocVisitor):
                 vsvalue = LiteralStem(baseliteral.value)
         self._nc_values.append(vsvalue)
 
-    def _literal_exclusions(self, exclusions: List[ShExDocParser.LiteralExclusionContext]) \
-            -> List[Union[ObjectLiteral, LiteralStem]]:
+    def _literal_exclusions(self, exclusions: list[ShExDocParser.LiteralExclusionContext]) \
+            -> list[ObjectLiteral | LiteralStem]:
         """ ShExC: literalExclusion = '-' literal STEM_MARK?
             ShExJ: exclusions: [STRING|LiteralStem +]
                    literalStem: {stem:STRING}
         """
-        rval: List[Union[ObjectLiteral, LiteralStem]] = []
+        rval: list[ObjectLiteral | LiteralStem] = []
         for excl in exclusions:
             excl_literal_v = self.context.literal_to_ObjectLiteral(excl.literal()).value
             rval.append(LiteralStem(excl_literal_v) if excl.STEM_MARK() else excl_literal_v)
         return rval
 
-    def _visit_language_range(self,  ctx: Union[ShExDocParser.LanguageRangeFullContext,
-                                                ShExDocParser.LanguageRangeAtContext]):
+    def _visit_language_range(self,  ctx: ShExDocParser.LanguageRangeFullContext | ShExDocParser.LanguageRangeAtContext):
         """ ShExC: languageRange : LANGTAG (STEM_MARK languagExclusion*)?  # languageRangeFull
                                  | '@' STEM_MARK languageExclusion*        # languageRangeAt
             ShExJ: valueSetValue = objectValue | LanguageStem | LanguageStemRange """
@@ -142,10 +141,10 @@ class ShexNodeExpressionParser(ShExDocVisitor):
             self._visit_language_range(ctx)
 
     @staticmethod
-    def _language_exclusions(exclusions: List[ShExDocParser.LanguageExclusionContext]) \
-            -> List[Union[LANGTAG, LanguageStem]]:
+    def _language_exclusions(exclusions: list[ShExDocParser.LanguageExclusionContext]) \
+            -> list[LANGTAG | LanguageStem]:
         """ languageExclusion = '-' LANGTAG STEM_MARK?"""
-        rval: List[Union[LANGTAG, LanguageStem]] = []
+        rval: list[LANGTAG | LanguageStem] = []
         for excl in exclusions:
             excl_langtag = LANGTAG(excl.LANGTAG().getText()[1:])
             rval.append(LanguageStem(excl_langtag) if excl.STEM_MARK() else excl_langtag)

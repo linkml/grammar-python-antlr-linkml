@@ -24,8 +24,8 @@ class ParserContext:
     """
     def __init__(self):
         self.schema = ShExJ.Schema()
-        self.ld_prefixes: Dict[PREFIXstr, IRIstr] = {}       # prefixes in the JSON-LD module
-        self.prefixes: Dict[PREFIXstr, IRIstr] = {}          # Assigned prefixes
+        self.ld_prefixes: dict[PREFIXstr, IRIstr] = {}       # prefixes in the JSON-LD module
+        self.prefixes: dict[PREFIXstr, IRIstr] = {}          # Assigned prefixes
         self.base: Optional[IRIstr] = None
 
     def _lookup_prefix(self, prefix: PREFIXstr) -> str:
