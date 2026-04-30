@@ -1,4 +1,4 @@
-This repository was originally developed by Eric Prud'hommeaux (@ericprud) all credit goes to him and other original developers. The reason for creating a detached fork ([original repo](https://github.com/shexSpec/grammar-python-antlr)) in the LinkML organization was to be able to support Python 3.14 in LinkML and to put the project in an organization that would allow for sustainability through community exposure as the library did not receive updates in the last years. Efforts to get in touch with the original developers sadly was not successful.
+This repository was originally developed by Eric Prud'hommeaux (@ericprud). All credit goes to him and other original developers. The reason for creating a detached fork ([original repo](https://github.com/shexSpec/grammar-python-antlr)) in the LinkML organization was to be able to support Python 3.14 in LinkML and to put the project in an organization that would allow for sustainability through community exposure as the library did not receive updates in the last years. Efforts to get in touch with the original developers sadly was not successful.
 
 # PyShExC - The Python ShExC Parser
 This package converts the Shape Expression Compact (ShExC) into Python JSON Schema Binding (pyjsg) objects. The pyjsg object representation can be used to:
@@ -17,6 +17,7 @@ This package converts the Shape Expression Compact (ShExC) into Python JSON Sche
 * 0.5.3 -- Factor out fetch ability for re-use in other packages
 * 0.5.4 -- Fix to 0.5.2 -- low probability type matches have to be ignored
 * 0.10.0 -- Support for Python 3.10-3.14. Change of build.
+* 0.10.1 -- Updated release workflow.
 
 ## Installation
 ```bash
