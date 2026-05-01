@@ -21,9 +21,6 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@v7
 
-    - name: Install uv-dynamic-versioning plugin
-      run: uv tool install uv-dynamic-versioning --with "hatchling"
-
     - name: Install Python 3.13
       run: uv python install 3.13
 
