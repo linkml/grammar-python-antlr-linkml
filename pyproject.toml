@@ -3,7 +3,7 @@ requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
 
 [project]
-name = "grammar-python-antlr-linkml"
+name = "PyShexC"
 description = "PyShExC - Python ShEx compiler"
 authors = [
     { name = "Eric Prudman", email = "eric@uu3.org"},
