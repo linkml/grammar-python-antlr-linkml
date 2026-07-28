@@ -1,4 +1,5 @@
 import re
+from urllib.parse import urljoin
 from ShExJSG import ShExJ
 from pyjsg.jsglib import *
 from rdflib import RDF, XSD
@@ -37,7 +38,9 @@ class ParserContext:
     def iriref_to_str(self, ref: ShExDocParser.IRIREF) -> str:
         """ IRIREF: '<' (~[\u0000-\u0020=<>\"{}|^`\\] | UCHAR)* '>' """
         rval = self._fix_unicode_escapes(ref.getText()[1:-1])
-        return rval if ':' in rval or not self.base else self.base.val + rval
+        # relative IRIs resolve per RFC 3986 against the document base, not by
+        # concatenation (e.g. <S1> against .../validation/doc.shex is .../validation/S1)
+        return rval if ':' in rval or not self.base else urljoin(self.base.val, rval)
 
     def iriref_to_shexj_iriref(self, ref: ShExDocParser.IRIREF) -> ShExJ.IRIREF:
         """  IRIREF: '<' (~[\u0000-\u0020=<>\"{}|^`\\] | UCHAR)* '>'

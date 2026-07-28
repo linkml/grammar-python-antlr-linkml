@@ -50,7 +50,8 @@ def load_shex_file(shexfilename: str) -> str:
         encoding = 'utf-8-sig'
     else:
         result = chardet.detect(data)
-        encoding = result['encoding'] if float(result['confidence']) > 0.9 else 'UTF-8'
+        # chardet can return {'encoding': None, ...}; never pass None to decode()
+        encoding = result['encoding'] if result['encoding'] is not None and float(result['confidence'] or 0) > 0.9 else 'UTF-8'
 
     return data.decode(encoding)
 
