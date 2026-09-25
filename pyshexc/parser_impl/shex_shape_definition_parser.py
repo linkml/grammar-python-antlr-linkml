@@ -36,10 +36,10 @@ class ShexShapeDefinitionParser(ShExDocVisitor):
 
     def visitQualifier(self, ctx: ShExDocParser.QualifierContext):
         """ qualifier: extension | extraPropertySet | KW_CLOSED
-            extensions: KW_EXTENDS shapeExprLabel | '&' shapeExprLabel
+            extension: KW_EXTENDS shapeRef | '&' shapeRef
         """
         if ctx.extension():
-            ext = self.context.shapeexprlabel_to_IRI(ctx.extension().shapeExprLabel())
+            ext = self.context.shapeRef_to_iriref(ctx.extension().shapeRef())
             if self.shape.extends is None:
                 self.shape.extends = [ext]
             else:

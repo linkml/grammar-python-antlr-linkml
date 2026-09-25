@@ -59,7 +59,8 @@ class ShexDocParser(ShExDocVisitor):
             if ctx.KW_ABSTRACT():
                 shape.abstract = True
             if ctx.restrictions():
-                shape.restricts = [self.context.shapeexprlabel_to_IRI(r.shapeExprLabel()) for r in ctx.restrictions()]
+                shape.restricts = [self.context.shapeRef_to_iriref(r.shapeRef())
+                                   for r in ctx.restrictions()]
 
         if label:
             shape.id = label

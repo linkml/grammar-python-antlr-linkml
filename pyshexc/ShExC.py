@@ -116,7 +116,7 @@ class ShExC:
         rval .append(self.shapeExprLabel(shapeDecl.id))
         if shapeDecl.restricts:
             for lbl in shapeDecl.restricts:
-                rval += ['RESTRICTS ' + self.shapeExprLabel(lbl)]
+                rval += ["RESTRICTS @" + self.shapeExprLabel(lbl)]
         rval += self.shapeExpr(shapeDecl.shapeExpr)
         return rval
 
@@ -155,7 +155,7 @@ class ShExC:
         rval = [self.shapeExprLabel(shape.id)]
         if shape.extends is not None:
             for lbl in shape.extends:
-                rval += ['EXTENDS ' + self.shapeExprLabel(lbl)]
+                rval += ["EXTENDS @" + self.shapeExprLabel(lbl)]
         if shape.extra is not None:
             rval += ['EXTRA'] + [self.iriref(e) for e in shape.extra]
         if shape.closed:

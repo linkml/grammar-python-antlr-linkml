@@ -1,4 +1,4 @@
-# Generated from ShExDoc.g4 by ANTLR 4.9
+# Generated from ShExDoc.g4 by ANTLR 4.9.3
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -343,11 +343,11 @@ def serializedATN():
         buf.write("\u02b2\u02b4\5\u0094K\2\u02b3\u02b1\3\2\2\2\u02b3\u02b2")
         buf.write("\3\2\2\2\u02b4\u0093\3\2\2\2\u02b5\u02b6\t\13\2\2\u02b6")
         buf.write("\u0095\3\2\2\2\u02b7\u02b8\7@\2\2\u02b8\u0097\3\2\2\2")
-        buf.write("\u02b9\u02ba\7\32\2\2\u02ba\u02be\5\u0086D\2\u02bb\u02bc")
-        buf.write("\7\24\2\2\u02bc\u02be\5\u0086D\2\u02bd\u02b9\3\2\2\2\u02bd")
+        buf.write("\u02b9\u02ba\7\32\2\2\u02ba\u02be\5.\30\2\u02bb\u02bc")
+        buf.write("\7\24\2\2\u02bc\u02be\5.\30\2\u02bd\u02b9\3\2\2\2\u02bd")
         buf.write("\u02bb\3\2\2\2\u02be\u0099\3\2\2\2\u02bf\u02c0\7\34\2")
-        buf.write("\2\u02c0\u02c4\5\u0086D\2\u02c1\u02c2\7\23\2\2\u02c2\u02c4")
-        buf.write("\5\u0086D\2\u02c3\u02bf\3\2\2\2\u02c3\u02c1\3\2\2\2\u02c4")
+        buf.write("\2\u02c0\u02c4\5.\30\2\u02c1\u02c2\7\23\2\2\u02c2\u02c4")
+        buf.write("\5.\30\2\u02c3\u02bf\3\2\2\2\u02c3\u02c1\3\2\2\2\u02c4")
         buf.write("\u009b\3\2\2\2`\u009f\u00a4\u00a9\u00ac\u00b3\u00c1\u00ca")
         buf.write("\u00ce\u00d1\u00d7\u00dc\u00e7\u00ef\u00f7\u00ff\u0103")
         buf.write("\u0108\u010e\u0113\u011a\u011e\u0123\u012a\u012e\u0132")
@@ -582,7 +582,7 @@ class ShExDocParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9")
+        self.checkVersion("4.9.3")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -590,6 +590,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShExDocContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -691,6 +692,7 @@ class ShExDocParser ( Parser ):
 
 
     class DirectiveContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -756,6 +758,7 @@ class ShExDocParser ( Parser ):
 
 
     class BaseDeclContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -799,6 +802,7 @@ class ShExDocParser ( Parser ):
 
 
     class PrefixDeclContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -847,6 +851,7 @@ class ShExDocParser ( Parser ):
 
 
     class ImportDeclContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -890,6 +895,7 @@ class ShExDocParser ( Parser ):
 
 
     class NotStartActionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -946,6 +952,7 @@ class ShExDocParser ( Parser ):
 
 
     class StartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -992,6 +999,7 @@ class ShExDocParser ( Parser ):
 
 
     class StartActionsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1045,6 +1053,7 @@ class ShExDocParser ( Parser ):
 
 
     class StatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1101,6 +1110,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeExprDeclContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1190,6 +1200,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1229,6 +1240,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1268,6 +1280,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeOrContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1329,6 +1342,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeOrContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1390,6 +1404,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeAndContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1451,6 +1466,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeAndContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1512,6 +1528,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeNotContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1563,6 +1580,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeNotContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1614,6 +1632,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeAtomContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1793,6 +1812,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeAtomContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1972,6 +1992,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeOrRefContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2028,6 +2049,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeOrRefContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2084,6 +2106,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeRefContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2149,6 +2172,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineLitNodeConstraintContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2378,6 +2402,7 @@ class ShExDocParser ( Parser ):
 
 
     class LitNodeConstraintContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2452,6 +2477,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineNonLitNodeConstraintContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2565,6 +2591,7 @@ class ShExDocParser ( Parser ):
 
 
     class NonLitNodeConstraintContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2639,6 +2666,7 @@ class ShExDocParser ( Parser ):
 
 
     class NonLiteralKindContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2689,6 +2717,7 @@ class ShExDocParser ( Parser ):
 
 
     class XsFacetContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2745,6 +2774,7 @@ class ShExDocParser ( Parser ):
 
 
     class StringFacetContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2817,6 +2847,7 @@ class ShExDocParser ( Parser ):
 
 
     class StringLengthContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2867,6 +2898,7 @@ class ShExDocParser ( Parser ):
 
 
     class NumericFacetContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2934,6 +2966,7 @@ class ShExDocParser ( Parser ):
 
 
     class NumericRangeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2987,6 +3020,7 @@ class ShExDocParser ( Parser ):
 
 
     class NumericLengthContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3034,6 +3068,7 @@ class ShExDocParser ( Parser ):
 
 
     class RawNumericContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3084,6 +3119,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeDefinitionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3158,6 +3194,7 @@ class ShExDocParser ( Parser ):
 
 
     class InlineShapeDefinitionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3225,6 +3262,7 @@ class ShExDocParser ( Parser ):
 
 
     class QualifierContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3289,6 +3327,7 @@ class ShExDocParser ( Parser ):
 
 
     class ExtraPropertySetContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3347,6 +3386,7 @@ class ShExDocParser ( Parser ):
 
 
     class TripleExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3386,6 +3426,7 @@ class ShExDocParser ( Parser ):
 
 
     class OneOfTripleExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3442,6 +3483,7 @@ class ShExDocParser ( Parser ):
 
 
     class MultiElementOneOfContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3499,6 +3541,7 @@ class ShExDocParser ( Parser ):
 
 
     class GroupTripleExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3555,6 +3598,7 @@ class ShExDocParser ( Parser ):
 
 
     class SingleElementGroupContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3603,6 +3647,7 @@ class ShExDocParser ( Parser ):
 
 
     class MultiElementGroupContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3670,6 +3715,7 @@ class ShExDocParser ( Parser ):
 
 
     class UnaryTripleExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3757,6 +3803,7 @@ class ShExDocParser ( Parser ):
 
 
     class BracketedTripleExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3847,6 +3894,7 @@ class ShExDocParser ( Parser ):
 
 
     class TripleConstraintContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3951,6 +3999,7 @@ class ShExDocParser ( Parser ):
 
 
     class CardinalityContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4073,6 +4122,7 @@ class ShExDocParser ( Parser ):
 
 
     class RepeatRangeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4183,6 +4233,7 @@ class ShExDocParser ( Parser ):
 
 
     class SenseFlagsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4219,6 +4270,7 @@ class ShExDocParser ( Parser ):
 
 
     class ValueSetContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4274,6 +4326,7 @@ class ShExDocParser ( Parser ):
 
 
     class ValueSetValueContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4415,6 +4468,7 @@ class ShExDocParser ( Parser ):
 
 
     class IriRangeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4483,6 +4537,7 @@ class ShExDocParser ( Parser ):
 
 
     class IriExclusionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4536,6 +4591,7 @@ class ShExDocParser ( Parser ):
 
 
     class LiteralRangeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4604,6 +4660,7 @@ class ShExDocParser ( Parser ):
 
 
     class LiteralExclusionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4657,6 +4714,7 @@ class ShExDocParser ( Parser ):
 
 
     class LanguageRangeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4783,6 +4841,7 @@ class ShExDocParser ( Parser ):
 
 
     class LanguageExclusionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4835,6 +4894,7 @@ class ShExDocParser ( Parser ):
 
 
     class IncludeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4876,6 +4936,7 @@ class ShExDocParser ( Parser ):
 
 
     class AnnotationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4939,6 +5000,7 @@ class ShExDocParser ( Parser ):
 
 
     class SemanticActionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4991,6 +5053,7 @@ class ShExDocParser ( Parser ):
 
 
     class LiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5056,6 +5119,7 @@ class ShExDocParser ( Parser ):
 
 
     class PredicateContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5112,6 +5176,7 @@ class ShExDocParser ( Parser ):
 
 
     class RdfTypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5150,6 +5215,7 @@ class ShExDocParser ( Parser ):
 
 
     class DatatypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5189,6 +5255,7 @@ class ShExDocParser ( Parser ):
 
 
     class ShapeExprLabelContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5245,6 +5312,7 @@ class ShExDocParser ( Parser ):
 
 
     class TripleExprLabelContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5301,6 +5369,7 @@ class ShExDocParser ( Parser ):
 
 
     class NumericLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5351,6 +5420,7 @@ class ShExDocParser ( Parser ):
 
 
     class RdfLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5411,6 +5481,7 @@ class ShExDocParser ( Parser ):
 
 
     class BooleanLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5458,6 +5529,7 @@ class ShExDocParser ( Parser ):
 
 
     class StringContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5511,6 +5583,7 @@ class ShExDocParser ( Parser ):
 
 
     class IriContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5566,6 +5639,7 @@ class ShExDocParser ( Parser ):
 
 
     class PrefixedNameContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5613,6 +5687,7 @@ class ShExDocParser ( Parser ):
 
 
     class BlankNodeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5651,6 +5726,7 @@ class ShExDocParser ( Parser ):
 
 
     class ExtensionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5659,8 +5735,8 @@ class ShExDocParser ( Parser ):
         def KW_EXTENDS(self):
             return self.getToken(ShExDocParser.KW_EXTENDS, 0)
 
-        def shapeExprLabel(self):
-            return self.getTypedRuleContext(ShExDocParser.ShapeExprLabelContext,0)
+        def shapeRef(self):
+            return self.getTypedRuleContext(ShExDocParser.ShapeRefContext,0)
 
 
         def getRuleIndex(self):
@@ -5688,14 +5764,14 @@ class ShExDocParser ( Parser ):
                 self.state = 695
                 self.match(ShExDocParser.KW_EXTENDS)
                 self.state = 696
-                self.shapeExprLabel()
+                self.shapeRef()
                 pass
             elif token in [ShExDocParser.T__17]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 697
                 self.match(ShExDocParser.T__17)
                 self.state = 698
-                self.shapeExprLabel()
+                self.shapeRef()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -5710,6 +5786,7 @@ class ShExDocParser ( Parser ):
 
 
     class RestrictionsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5718,8 +5795,8 @@ class ShExDocParser ( Parser ):
         def KW_RESTRICTS(self):
             return self.getToken(ShExDocParser.KW_RESTRICTS, 0)
 
-        def shapeExprLabel(self):
-            return self.getTypedRuleContext(ShExDocParser.ShapeExprLabelContext,0)
+        def shapeRef(self):
+            return self.getTypedRuleContext(ShExDocParser.ShapeRefContext,0)
 
 
         def getRuleIndex(self):
@@ -5747,14 +5824,14 @@ class ShExDocParser ( Parser ):
                 self.state = 701
                 self.match(ShExDocParser.KW_RESTRICTS)
                 self.state = 702
-                self.shapeExprLabel()
+                self.shapeRef()
                 pass
             elif token in [ShExDocParser.T__16]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 703
                 self.match(ShExDocParser.T__16)
                 self.state = 704
-                self.shapeExprLabel()
+                self.shapeRef()
                 pass
             else:
                 raise NoViableAltException(self)
